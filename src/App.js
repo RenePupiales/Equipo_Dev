@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Auth0Provider } from '@auth0/auth0-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; 
+import Routes from './Routes/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0Provider
+    domain="tiendavirtual2390.us.auth0.com"
+    clientId="N7qxTB6aCGgFQ9K9o8tEsQvndYIGligm"
+    redirectUri={window.location.origin}
+  >
+    <Routes />
+  </Auth0Provider>
   );
 }
 
 export default App;
+ 
