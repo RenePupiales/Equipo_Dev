@@ -1,0 +1,14 @@
+exports = function(payload, response) {
+	var user = {}
+	var result = {}
+
+	if (payload.body) {
+		user = EJSON.parse(payload.body.text());
+		console.log("Parsed Payload body: ", JSON.stringify(user));
+
+		var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp");
+
+		return collection.updateOne({_id:BSON.ObjectId(user.user_id)}, {$set: user});
+	}
+	return result;
+};

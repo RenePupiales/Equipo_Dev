@@ -1,0 +1,16 @@
+exports = function(payload, response){
+	
+	var newUser = {};
+	var result = {};
+
+	if (payload.body){
+		newUser = EJSON.parse(payload.body.text());
+		console.log ("Parsed Payload body : ", JSON.stringify(newUser));
+	
+		var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp");
+
+		return collection.insertOne(newUser);
+	}
+	
+	return result;
+};

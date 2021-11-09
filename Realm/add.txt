@@ -1,0 +1,23 @@
+// This function is the webhook's request handler.
+exports = function(payload, response) {
+    
+    var NewProduct = {};
+    var result = {};
+    
+    if (payload.body){
+      
+      //parse the body to het de Matrix document
+      
+      NewProduct=EJSON.parse(payload.body.text());
+      console.log("Parsed payload body: ", JSON.stringifyNewProduct));
+      
+      //Get a reference to the Matrix database and collection
+      
+      var collection = context.services.get("mongode-atlas").db("Matrix").collection("Matrix");
+      
+      //Insert the new Matrix db
+      
+      return collection.insertOne(NewProduct);
+    }
+    return result;
+};

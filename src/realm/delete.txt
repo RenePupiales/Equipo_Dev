@@ -1,0 +1,9 @@
+exports = function(payload, response) {
+  
+    const id = payload.query.id || '';
+  
+    console.log ("Id received = " + id);
+    
+    var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp");
+    return collection.deleteOne({_id:BSON.ObjectId(id)});
+  };
