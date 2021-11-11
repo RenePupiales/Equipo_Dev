@@ -13,21 +13,21 @@ function InitialSesion () {
         alert("Conexión fallida");
     }
 
-    const urlHome = "/MenuPrincipal";
+    const urlHome = "http://localhost:3000/MenuPrincipal";
 
     return (
         <Fragment>
             <main> 
                 <br/><br/>
                 <GoogleLogin
-                    clientId="85466486914-0e9mlaklko1tl73o53bpaqkq20bbeoj3.apps.googleusercontent.com"
+                    clientId="226758660992-r71q0orgat1gprk427sq8s9585bjgtv6.apps.googleusercontent.com"
                     buttonText="Iniciar sesión con Google Account"
                     onSucess={responsableGoogle}
                     onFailure={responsableFailGoogle}
                     cookiePolicy={'single_host_origin'}
                     isSignedIn={true}
                     uxMode="redirect"
-                    redirectUri="https://matrix-style.herokuapp.com/MenuPrincipal"
+                    redirectUri="http://localhost:3000/MenuPrincipal"
                     className="g-signin"
                 />
             </main>

@@ -6,7 +6,7 @@ exports = function(payload, response) {
 		user = EJSON.parse(payload.body.text());
 		console.log("Parsed Payload body: ", JSON.stringify(user));
 
-		var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp");
+		var collection = context.services.get("mongodb-atlas").db("Rebajas").collection("Rebajas");
 
 		return collection.updateOne({_id:BSON.ObjectId(user.user_id)}, {$set: user});
 	}

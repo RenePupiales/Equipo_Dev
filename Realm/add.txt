@@ -13,7 +13,7 @@ exports = function(payload, response) {
       
       //Get a reference to the Matrix database and collection
       
-      var collection = context.services.get("mongode-atlas").db("Matrix").collection("Matrix");
+      var collection = context.services.get("mongode-atlas").db("Rebajas").collection("Rebajas");
       
       //Insert the new Matrix db
       

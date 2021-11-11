@@ -1,6 +1,6 @@
 exports = async function(payload, response){
 	
-	var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp")
+	var collection = context.services.get("mongodb-atlas").db("Rebajas").collection("Rebajas")
 	var users = await collection.find().toArray();
 
 	users.forEach( user => {

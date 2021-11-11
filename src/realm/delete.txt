@@ -4,6 +4,6 @@ exports = function(payload, response) {
   
     console.log ("Id received = " + id);
     
-    var collection = context.services.get("mongodb-atlas").db("matrixDB").collection("matrixApp");
+    var collection = context.services.get("mongodb-atlas").db("Rebajas").collection("Rebajas");
     return collection.deleteOne({_id:BSON.ObjectId(id)});
   };
